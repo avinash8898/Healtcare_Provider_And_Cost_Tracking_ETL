@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  healthcare-etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: healthcare_etl_container
+    volumes:
+      - ./Healthcare_ETL_Project:/app/Healthcare_ETL_Project
+      - ./scripts:/app/scripts
+      - ./notebooks:/app/notebooks
+    working_dir: /app
+    command: tail -f /dev/null  # Keep the container running
+
+  jupyter:
+    image: jupyter/base-notebook
+    container_name: healthcare_jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
