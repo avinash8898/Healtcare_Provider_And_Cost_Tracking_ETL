@@ -48,11 +48,14 @@ Key Queries Implemented
 --Effectiveness Score by Treatment Type and Outcome Day
 
 # How to Use the Project
+
 **1. Clone the Repository**
+
 Import the project from GitHub:
 git clone https://github.com/avinash8898/Healtcare_Provider_And_Cost_Tracking_ETL.git
 
 **2. Install Dependencies**
+
 Install the required Python libraries:
 
 pip install seaborn
@@ -62,6 +65,7 @@ Or install all at once using:
 pip install -r requirements.txt
 
 **3. Run the ETL Script**
+
 Command:
 python scripts/run_etl.py
 
@@ -70,6 +74,7 @@ This script extracts data from raw CSV files, transforms the data, and loads it 
 It ensures that only new files (incremental loading) are processed after the first run.
 
 **4. Create Database Schema**
+
 Command:
 python scripts/Create_Schema.py
 
@@ -79,6 +84,7 @@ It also triggers Provider_SCD.py internally to apply SCD Type II logic on the Pr
 Tracks doctors' affiliated hospital changes over time by maintaining historical records.
 
 **5. Create Indexes**
+
 Command:
 python scripts/Create_Indexes.py
 
@@ -87,6 +93,7 @@ Drops existing indexes if they exist, then creates new indexes on important fiel
 This improves query performance especially when working with large datasets.
 
 **6. Access Analytical Notebooks**
+
 Navigate to the /notebooks directory and open the following notebooks:
 query_db.ipynb
 Data_Visualization.ipynb
@@ -99,11 +106,13 @@ Analyze doctor affiliation history
 Explore treatment cost and outcome patterns
 
 **7. Incremental Data Load Support**
+
 This project is incremental:
 After the initial ETL run, if new raw files are added to /Healthcare_ETL_Project/raw_data/, running run_etl.py again will only process the new files.
 Already processed files are tracked in processed_files.txt.
 
 **8. Docker Support**
+
 You can run the entire environment using Docker for easy setup and reproducibility.
 Dockerfile and docker-compose.yml are provided.
 
