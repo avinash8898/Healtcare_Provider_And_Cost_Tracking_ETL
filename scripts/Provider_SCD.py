@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-# Define database path
+# Database path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Healthcare_ETL_Project'))
 db_path = os.path.join(project_root, "db", "healthcare_data.db")
 
@@ -35,7 +35,7 @@ BEGIN
 END;
 ''')
 
-# ✅ Create SCD Type 2 Trigger with proper logic (prevents duplicates)
+#Create SCD Type 2 Trigger with proper logic (prevents duplicates)
 cursor.execute('''
 CREATE TRIGGER trg_provider_scd2
 BEFORE UPDATE ON PROVIDER
@@ -67,4 +67,4 @@ END;
 conn.commit()
 conn.close()
 
-print("✅ SCD Type 2 trigger created successfully. Old triggers dropped and new logic applied.")
+print("SCD Type 2 trigger created successfully. Old triggers dropped and new logic applied.")

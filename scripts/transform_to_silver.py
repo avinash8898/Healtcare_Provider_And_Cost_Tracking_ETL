@@ -6,7 +6,7 @@ from datetime import datetime
 
 def main():
     try:
-        # Set up paths
+        # Setting up paths
         project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Healthcare_ETL_Project'))
         db_dir = os.path.join(project_root, "db")
         processed_csv_path = os.path.join(project_root, "processed", "Healthcare_Dataset.csv")
@@ -15,10 +15,10 @@ def main():
         if not os.path.exists(processed_csv_path):
             raise FileNotFoundError(f"Processed CSV not found at: {processed_csv_path}")
 
-        # Load data
+        # Loading data
         df = pd.read_csv(processed_csv_path)
 
-        print(f"📄 Loaded {len(df)} records from processed CSV.")
+        print(f"Loaded {len(df)} records from processed CSV.")
 
         # Transform date columns
         df['treatment_start_date'] = pd.to_datetime(df['treatment_start_date'])
@@ -57,9 +57,9 @@ def main():
         # Connect to SQLite
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
-        print("🗄️ Connected to database.")
+        print("Connected to database.")
 
-        # Effectiveness mapping
+        # Effectiveness table mapping
         effectiveness_mapping = {
             'deceased': 0,
             'worsened': 1,
@@ -81,7 +81,7 @@ def main():
                 INSERT OR IGNORE INTO EFFECTIVENESS (Effectiveness_ID, Outcome_Status, Effectiveness_Score)
                 VALUES (?, ?, ?)
             ''', (idx, status, score))
-        print("✅ Effectiveness scores populated.")
+        print("Effectiveness scores populated.")
 
         # Insert records
         for _, row in df.iterrows():
@@ -187,14 +187,14 @@ def main():
             inserted_treatments += cursor.rowcount
 
         conn.commit()
-        print("✅ All data inserted and committed successfully.")
+        print("All data inserted and committed successfully.")
 
         # Print record counts
-        print(f"🧑‍⚕️ Patients inserted: {inserted_patients}")
-        print(f"🏥 Providers inserted (new versions or new): {inserted_providers}")
-        print(f"🦠 Diseases inserted: {inserted_diseases}")
-        print(f"🌎 Locations inserted: {inserted_locations}")
-        print(f"💊 Treatments inserted: {inserted_treatments}")
+        print(f"Patients inserted: {inserted_patients}")
+        print(f"Providers inserted (new versions or new): {inserted_providers}")
+        print(f"Diseases inserted: {inserted_diseases}")
+        print(f"Locations inserted: {inserted_locations}")
+        print(f"Treatments inserted: {inserted_treatments}")
 
     except FileNotFoundError as fe:
         print(f"{fe}")
@@ -211,7 +211,7 @@ def main():
     finally:
         if 'conn' in locals():
             conn.close()
-            print("🔒 Database connection closed.")
+            print("Database connection closed.")
 
 if __name__ == "__main__":
     main()

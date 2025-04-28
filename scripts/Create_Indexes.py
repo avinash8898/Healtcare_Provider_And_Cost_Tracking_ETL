@@ -1,9 +1,9 @@
 import sqlite3
 
 def create_indexes():
-    # Connect to your healthcare database
+    # Connect to healthcare database
     try:
-        conn = sqlite3.connect('../Healthcare_ETL_Project/db/healthcare_data.db')  # Adjust path if needed
+        conn = sqlite3.connect('../Healthcare_ETL_Project/db/healthcare_data.db')
         cursor = conn.cursor()
         print("Successfully connected to the database.")
     except sqlite3.Error as e:

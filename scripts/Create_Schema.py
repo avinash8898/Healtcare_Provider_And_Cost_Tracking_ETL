@@ -1,6 +1,7 @@
 import sqlite3
 import os
 import sys
+import subprocess
 
 def create_database_schema(db_path):
     try:
@@ -8,7 +9,7 @@ def create_database_schema(db_path):
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
-        print("📂 Connected to database.")
+        print("Connected to database.")
 
         # Create tables
         cursor.execute('''
@@ -88,22 +89,30 @@ def create_database_schema(db_path):
             Report_Duration INTEGER
         );
         ''')
+        
 
         conn.commit()
-        print("✅ Database schema created successfully.")
+        print("Database schema created successfully.")
 
     except sqlite3.Error as e:
-        print(f"❌ SQLite error occurred: {e}")
+        print(f"SQLite error occurred: {e}")
         sys.exit(1)
 
     except Exception as e:
-        print(f"❌ An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
         sys.exit(1)
+    
+    # Run Provider_SCD.py
+    try:
+        subprocess.run(["python3", "Provider_SCD.py"], check=True)
+        print("Triggers for SCD Type II created successfully.")
+    except subprocess.CalledProcessError as e:
+        print("Error while creating SCD Type II triggers:", e)
 
     finally:
         if conn:
             conn.close()
-            print("🔒 Database connection closed.")
+            print("Database connection closed.")
 
 if __name__ == "__main__":
     try:
@@ -116,5 +125,5 @@ if __name__ == "__main__":
         create_database_schema(db_path)
 
     except Exception as e:
-        print(f"❌ Failed to set up the database: {e}")
+        print(f"Failed to set up the database: {e}")
         sys.exit(1)

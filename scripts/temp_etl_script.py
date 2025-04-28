@@ -98,9 +98,9 @@ def run_etl():
             final_df.to_csv(cleaned_file, mode='a', index=False, header=False)
         else:
             final_df.to_csv(cleaned_file, index=False)
-        print(f"✅ Appended {len(final_df)} new rows to cleaned_data.csv")
+        print(f"Appended {len(final_df)} new rows to cleaned_data.csv")
     else:
-        print("🚫 No new files to process.")
+        print("No new files to process.")
 
 # Run the ETL
 if __name__ == "__main__":
