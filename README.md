@@ -58,13 +58,13 @@ git clone https://github.com/avinash8898/Healtcare_Provider_And_Cost_Tracking_ET
 
 Install the required Python libraries:
 
-pip install seaborn
-pip install mplcursors
-!pip install plotly
-Or install all at once using:
+pip install seaborn  
+pip install mplcursors  
+!pip install plotly  
+Or install all at once using:  
 pip install -r requirements.txt
 
-**3. Run the ETL Script**
+**3. Run the ETL Script**  
 Note: First place the healthcare_treatments_csv_1.csv file in raw_data folder
 Command:
 python scripts/run_etl.py
