@@ -122,27 +122,27 @@ This will create a containerized environment with all dependencies installed and
 
 # Feature Description
 
-id: Unique Identifier.
-start_date: The timestamp without time zone value when the treatment was initiated.
-completion_date: The timestamp without time zone value when the treatment was completed
-outcome_status: Status can be successful, partially-successful or others.
-outcome_date: The timestamp without time zone value when the outcome after the completion_date was declared.
-duration_in_days: Difference between start_date and completion_date
-cost: The cost is considered to be in INR.
-type: The kind of treatment provided which could be therapeutic, surgical, etc.
-full_name: First Name and Last Name of practitioner / specialist.
-speciality_id: The unique identifier of the specialty they have studies, in order to treat patients accordingly.
-speciality_name: Name of the specialisation.
-affiliated_hospital: The name of the Hospital they're working in.
-country: United States
-state: California, Massachusetts, Chicago, etc.
-city: The 5 cities per states are chosen at random.
-full_name: First Name and Last Name of the Patient.
-gender: Male or Female.
-age: Numeric Value ranging from 18 to 80.
-speciality_id: Refers to the speciality of the provider's speciality_id that can treat this disease as they have specialized in it.
-name: Name of the disease
-type: Specifies type for the disease like acute, infectious, non-infectious, etc.
-severity: The severity could be moderate, severe, etc.
-transmission_mode: How the disease is generally transmitted.
-mortality_rate: A decimal value denoting the likelihood to live.
+--id: Unique Identifier.
+--start_date: The timestamp without time zone value when the treatment was initiated.
+--completion_date: The timestamp without time zone value when the treatment was completed
+--outcome_status: Status can be successful, partially-successful or others.
+--outcome_date: The timestamp without time zone value when the outcome after the completion_date was declared.
+--duration_in_days: Difference between start_date and completion_date
+--cost: The cost is considered to be in INR.
+--type: The kind of treatment provided which could be therapeutic, surgical, etc.
+--full_name: First Name and Last Name of practitioner / specialist.
+--speciality_id: The unique identifier of the specialty they have studies, in order to treat patients accordingly.
+--speciality_name: Name of the specialisation.
+--affiliated_hospital: The name of the Hospital they're working in.
+--country: United States
+--state: California, Massachusetts, Chicago, etc.
+--city: The 5 cities per states are chosen at random.
+--full_name: First Name and Last Name of the Patient.
+--gender: Male or Female.
+--age: Numeric Value ranging from 18 to 80.
+--speciality_id: Refers to the speciality of the provider's speciality_id that can treat this disease as they have specialized in it.
+--name: Name of the disease
+--type: Specifies type for the disease like acute, infectious, non-infectious, etc.
+--severity: The severity could be moderate, severe, etc.
+--transmission_mode: How the disease is generally transmitted.
+--mortality_rate: A decimal value denoting the likelihood to live.
