@@ -66,7 +66,7 @@ Or install all at once using:
 pip install -r requirements.txt
 
 **3. Run the ETL Script**  
-Note1: First place the healthcare_treatments_csv_1.csv file in raw_data folder  
+Note1: First place the healthcare_treatments_csv_1.csv file in raw_data folder and follow the below steps.  
 Note2: After following all the below steps, we can place another file healthcare_treatments_csv_2.csv
 in the raw_data folder and run all the below steps except step 4 and step 5 to support the incremental load.  
 Command:  
