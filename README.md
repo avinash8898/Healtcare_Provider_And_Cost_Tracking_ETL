@@ -61,6 +61,7 @@ Install the required Python libraries:
 pip install seaborn  
 pip install mplcursors  
 !pip install plotly  
+pip install pytest
 Or install all at once using:  
 pip install -r requirements.txt
 
@@ -119,6 +120,10 @@ Dockerfile and docker-compose.yml are provided.
 Spin up the environment with:
 docker-compose up
 This will create a containerized environment with all dependencies installed and allow you to access Jupyter notebooks via browser.
+
+# How to Test
+A Unit Test case is written to check the Outcome_Date trandformation.  
+Command: pytest -s Unit_Test.py
 
 # Feature Description
 
