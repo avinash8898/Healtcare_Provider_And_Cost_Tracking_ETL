@@ -67,4 +67,4 @@ END;
 conn.commit()
 conn.close()
 
-print("SCD Type 2 trigger created successfully. Old triggers dropped and new logic applied.")
+print("SCD Type 2 trigger created successfully.")
