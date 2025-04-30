@@ -125,7 +125,7 @@ docker-compose up
 This will create a containerized environment with all dependencies installed and allow you to access Jupyter notebooks via browser.
 
 # How to Test
-A Unit Test case is written to check the Outcome_Date trandformation.  
+A Unit Test case is written to check the Outcome_Date transformation to Outcome_Day, Outcome_Year, Outcome_Quarter.  
 Command: pytest -s Unit_Test.py
 
 # Feature Description
