@@ -18,6 +18,9 @@ Through various analytical queries and visualizations, this project enables:
 
 --Monitoring healthcare cost trends by month, quarter, and state
 
+# Dataset  
+Link: https://www.kaggle.com/datasets/shrinivasv/hospital-treatments-data-for-hospital?resource=download
+
 # Project Insights
 Key Queries Implemented
 --Calculate the average treatment duration per treatment type
@@ -154,3 +157,11 @@ Command: pytest -s Unit_Test.py
 -`severity`: The severity could be moderate, severe, etc.  
 -`transmission_mode`: How the disease is generally transmitted.  
 -`mortality_rate`: A decimal value denoting the likelihood to live.  
+
+# Features Extracted For OLAP Model
+
+-`Outcome_Day`: Extracted from `Outcome_Date`.  
+-`Outcome_Quarter`: Extracted from `Outcome_Date`.  
+-`Weekend_Flag`: Extracted from `Outcome_Date`.  
+-`Report_Duration`: Extracted from Treatment `Start_Date` - Report `Outcome_Date`. 
+-`Effectiveness_Score`: Transformed from `Effectiveness` table for **Scalability**, for example if any new effectiveness status is added in futrure - a new record need to be added in the `Effectiveness` table, so that it automatically maps to the new score during incremental load.
