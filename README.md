@@ -163,5 +163,5 @@ Command: pytest -s Unit_Test.py
 -`Outcome_Day`: Extracted from `Outcome_Date`.  
 -`Outcome_Quarter`: Extracted from `Outcome_Date`.  
 -`Weekend_Flag`: Extracted from `Outcome_Date`.  
--`Report_Duration`: Extracted from Treatment `Start_Date` - Report `Outcome_Date`. 
+-`Report_Duration`: Extracted from Treatment `Start_Date` - Report `Outcome_Date`.   
 -`Effectiveness_Score`: Transformed from `Effectiveness` table for **Scalability**, for example if any new effectiveness status is added in futrure - a new record need to be added in the `Effectiveness` table, so that it automatically maps to the new score during incremental load.
